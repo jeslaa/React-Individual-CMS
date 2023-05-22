@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addPrdct } from '../store/features/products/productSlice'
 
 const Add = () => {
 
+  const dispatch = useDispatch()
+
   const [formData, setFormData] = useState({
-    name: '',
+    productName: '',
     price: '',
     imgUrl: '',
     description: ''
@@ -20,14 +24,24 @@ const Add = () => {
       }
     })
   }
+
+  const handdleSubmit = e => {
+    e.preventDefault()
+    const data = {
+      ...formData,
+      price: +formData.price
+    }
+
+    dispatch(addPrdct(data))
+  }
   
   return (
     <div>
       <h1 className='text-center my-5'>Add a product</h1>
-      <form noValidate>
+      <form noValidate onSubmit={handdleSubmit}>
         <div className="mb-3">
           <label htmlFor="form" className='form-label'>Product name:</label>
-          <input type="text" name="productName" id="productName" className='form-control' value={formData.name} onChange={submitForm}/>
+          <input type="text" className='form-control' name='productName' id='productName' value={formData.productName} onChange={submitForm}/>
 
           <label htmlFor="price">Price:</label>
           <input className='form-control' name='price' id='price' type="text" value={formData.price} onChange={submitForm}/>

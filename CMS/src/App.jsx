@@ -7,6 +7,7 @@ import Add from './pages/Add'
 
 const App = () => {
 
+  //Navigates the page
   const router = createBrowserRouter([
     {
       path: '/',
