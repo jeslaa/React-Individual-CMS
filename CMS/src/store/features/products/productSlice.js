@@ -16,26 +16,52 @@ export const addPrdct = createAsyncThunk('p-list/add', async (data, thunkAPI) =>
     }
 })
 
+export const getPrdct = createAsyncThunk('p-list/getAll', async (_, thunkAPI) => {
+    try {
+        return await productService.getAllProducts('products')
+    } catch (error) {
+        return thunkAPI.rejectWithValue(error.message)
+    }
+})
+
 
 export const productSlice = createSlice({
     name: 'ProductList',
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder 
+        builder
             .addCase(addPrdct.pending, (state) => {
                 state.loading = true
             })
+
             .addCase(addPrdct.fulfilled, (state, action) => {
                 state.loading = false
                 state.error = null
                 state.products = [...state.products, action.payload]
-            }) 
+            })
 
             .addCase(addPrdct.rejected, (state, action) => {
                 state.loading = false
                 state.error = action.payload
-            }) 
+            })
+
+
+
+            .addCase(getPrdct.pending, (state) => {
+                state.loading = true
+            })
+
+            .addCase(getPrdct.fulfilled, (state, action) => {
+                state.loading = false
+                state.error = null
+                state.products = action.payload
+            })
+
+            .addCase(getPrdct.rejected, (state, action) => {
+                state.loading = false
+                state.error = action.payload
+            })
     }
 
 })
