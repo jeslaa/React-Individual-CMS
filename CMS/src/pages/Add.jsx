@@ -9,7 +9,7 @@ const Add = () => {
   const [formData, setFormData] = useState({
     productName: '',
     price: '',
-    imageURL: '',
+    imgUrl: '',
     description: ''
 
   })
@@ -47,7 +47,7 @@ const Add = () => {
           <input className='form-control' name='price' id='price' type="text" value={formData.price} onChange={submitForm}/>
 
           <label htmlFor="imgUrl">IMG url:</label>
-          <input className='form-control' name='imgUrl' id='imgUrl' type="text" value={formData.imageUrl} onChange={submitForm}/>
+          <input className='form-control' name='imgUrl' id='imgUrl' type="text" value={formData.imgUrl} onChange={submitForm}/>
 
           <label htmlFor="description">Description:</label>
           <textarea className='form-control' name="description" id="description" rows="5" value={formData.description} onChange={submitForm}></textarea>

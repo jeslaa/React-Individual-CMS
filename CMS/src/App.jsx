@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import RootLayout from './layouts/RootLayout'
 import Home from './pages/Home'
 import Add from './pages/Add'
+import ProductPage from './pages/ProductPage'
 
 const App = () => {
 
@@ -20,6 +21,10 @@ const App = () => {
         {
           path: 'add',
           element: <Add />
+        },
+        {
+          path: 'products/:id',
+          element: <ProductPage />
         }
 
       ]
