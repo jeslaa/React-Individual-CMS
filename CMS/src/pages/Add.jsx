@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addPrdct } from '../store/features/products/productSlice'
+// import { collection, deleteDoc, doc, updateDoc } from 'firebase/firestore'
+// import { dataBase } from '../firebase/config'
 
 const Add = () => {
 
@@ -14,7 +16,7 @@ const Add = () => {
 
   })
 
-  //Submits the form with multiple values and saves the data
+  //When form is submitted it saves the data
   const submitForm = e => {
     const { id, value } = e.target
     setFormData(form => {
@@ -34,6 +36,9 @@ const Add = () => {
 
     dispatch(addPrdct(data))
   }
+
+  //Delete function
+  
   
   return (
     <div>
