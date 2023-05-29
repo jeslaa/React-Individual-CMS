@@ -36,9 +36,6 @@ const Add = () => {
 
     dispatch(addPrdct(data))
   }
-
-  //Delete function
-  
   
   return (
     <div>
