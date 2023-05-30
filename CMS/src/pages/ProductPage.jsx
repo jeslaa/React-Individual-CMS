@@ -26,6 +26,7 @@ const ProductPage = () => {
                         </div>
                         <div className="product-price">
                             <p className="h3">{product.price}</p>
+                            <p>{product.imgUrl}</p>
                         </div>
                     </div>
                 </div>

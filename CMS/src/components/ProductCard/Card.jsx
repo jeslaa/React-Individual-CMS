@@ -27,7 +27,9 @@ const Card = ({ product }) => {
                     </div>
                 </Link>
                 <p>ID: {product.id}</p>
+                <p>Image URL: {product.imgUrl}</p>
                 <button className='deleteBtn product-btn btn btn-primary mt-3' onClick={ () => { deleteProduct(product.id) }}>Delete</button>
+                
 
             </div>
 
