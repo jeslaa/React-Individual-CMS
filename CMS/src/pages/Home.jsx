@@ -3,8 +3,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getPrdct } from '../store/features/products/productSlice'
 import Card from '../components/ProductCard/Card'
 import Edit from './Edit'
+import { Navigate } from 'react-router-dom'
 
 const Home = () => {
+
+  const {user} = useSelector(state => state.auth)
+
+  //Redirects the user to login page if the user isnt logged in
+  if(!user) return <Navigate to="/login"/>
 
   const dispatch = useDispatch()
 
@@ -12,13 +18,12 @@ const Home = () => {
     dispatch(getPrdct())
   }, [])
 
-  const { products, loading, error} = useSelector(state => state.listProduct)
+  const { products, error} = useSelector(state => state.listProduct)
 
 
   return (
     <div>
 
-      { loading }
       { error && <p>{error}</p>}
       <div className="row row-cols-lg-3">
       {

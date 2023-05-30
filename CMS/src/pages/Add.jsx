@@ -1,8 +1,14 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addPrdct } from '../store/features/products/productSlice'
+import { Navigate } from 'react-router-dom'
 
 const Add = () => {
+
+
+  const {user} = useSelector(state => state.auth)
+
+  if(!user) return <Navigate to="/login"/>
 
   const dispatch = useDispatch()
 
