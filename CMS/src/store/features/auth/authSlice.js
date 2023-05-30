@@ -15,6 +15,7 @@ export const loginWithUser = createAsyncThunk('auth/login', async (formUserData,
     }
 })
 
+
 export const authSlice = createSlice({
     name: 'auth',
     initialState,
