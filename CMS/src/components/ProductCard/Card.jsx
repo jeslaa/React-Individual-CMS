@@ -6,14 +6,6 @@ import { async } from '@firebase/util';
 
 const Card = ({ product }) => {
 
-    // const handleDelete = async () => {
-    //     const docRef = doc(dataBase, "products", id)
-    //     try{
-    //       await deleteDoc(docRef)
-    //     } catch (error){
-    //       console.log(error)
-    //     }
-    //   }
 
     //Delete function
     const deleteProduct = async (id) => {
@@ -30,10 +22,11 @@ const Card = ({ product }) => {
                         <h5 className="card-title">{product.productName}</h5>
                         <p className="card-text">{product.description.slice(0, 50)}...</p>
                         <p className="card-price">{product.price}</p>
-                        <p>Id: {product.id}</p>
+                       
 
                     </div>
                 </Link>
+                <p>ID: {product.id}</p>
                 <button className='deleteBtn product-btn btn btn-primary mt-3' onClick={ () => { deleteProduct(product.id) }}>Delete</button>
 
             </div>

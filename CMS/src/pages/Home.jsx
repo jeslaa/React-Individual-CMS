@@ -2,6 +2,7 @@ import  { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPrdct } from '../store/features/products/productSlice'
 import Card from '../components/ProductCard/Card'
+import Edit from './Edit'
 
 const Home = () => {
 
@@ -24,6 +25,7 @@ const Home = () => {
         products.map(product => <Card key={product.id} product={product}/>)
       }
       </div>
+      <Edit />
     </div>
   )
 }
