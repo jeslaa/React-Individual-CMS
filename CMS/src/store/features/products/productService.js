@@ -25,11 +25,6 @@ const getAllProducts = async (coll) => {
     return productsArray
 }
 
-// const getAsync = async (col, id) => {
-//     const docRef = doc(dataBase, col, id)
-//     const documentSnapShot = await getDoc(docRef)
-//     return { id: documentSnapShot.id, ...documentSnapShot.data()}
-// }
 
 
 

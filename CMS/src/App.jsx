@@ -5,6 +5,7 @@ import RootLayout from './layouts/RootLayout'
 import Home from './pages/Home'
 import Add from './pages/Add'
 import ProductPage from './pages/ProductPage'
+import Login from './pages/Login'
 
 const App = () => {
 
@@ -25,6 +26,11 @@ const App = () => {
         {
           path: 'products/:id',
           element: <ProductPage />
+        },
+
+        {
+          path: 'login',
+          element: <Login />
         }
 
       ]

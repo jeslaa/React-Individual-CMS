@@ -21,7 +21,8 @@ const Edit = () => {
           }
         })
       }
-
+      
+      //Update function 
       const handleSubmit = e => {
         e.preventDefault()
         if(formData === '' || id=== ''){
