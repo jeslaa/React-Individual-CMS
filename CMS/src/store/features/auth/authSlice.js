@@ -6,7 +6,7 @@ const initialState = {
     error: null
 }
 
-
+//Communicates with the database
 export const loginWithUser = createAsyncThunk('auth/login', async (formUserData, thunkAPI) => {
     try {
         return await authServ.login(formUserData.email, formUserData.password)

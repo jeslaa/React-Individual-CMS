@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { dataBase } from '../../firebase/config'
-import { async } from '@firebase/util';
 
 const Card = ({ product }) => {
 

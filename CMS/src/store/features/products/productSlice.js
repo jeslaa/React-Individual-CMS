@@ -47,7 +47,6 @@ export const productSlice = createSlice({
             })
 
 
-
             .addCase(getPrdct.pending, (state) => {
                 state.loading = true
             })
